@@ -4,7 +4,7 @@ let chosenMaxLife = 100;
 adjustHealthBars(chosenMaxLife);
 
 function attackHandler() {
-  const damage = dealMonsterDamage(ATTACK_VALUE);
+  dealMonsterDamage(ATTACK_VALUE);
 }
 
 attackBtn.addEventListener('click', attackHandler);
