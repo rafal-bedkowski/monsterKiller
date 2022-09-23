@@ -43,12 +43,6 @@ function strongAttackHandler() {
 
 function healPlayerHandler() {
   let healValue;
-  if (currentPlayerHealth >= chosenMaxLife - HEAL_VALUE) {
-    alert('You canot heal above max health');
-    healValue = chosenMaxLife - currentPlayerHealth; // we heal player to the initial max health but not above that
-  } else {
-    healValue = HEAL_VALUE;
-  }
   increasePlayerHealth(HEAL_VALUE);
   currentPlayerHealth += HEAL_VALUE;
   endRound();
