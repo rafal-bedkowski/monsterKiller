@@ -1,4 +1,4 @@
-# Java Script Course progress repo -- monsterKiller -- --uni exam sesion break--
+# Java Script Course progress repo -- monsterKiller -- 
 > Live demo [_here_](#).
 
 ## Table of Contents
