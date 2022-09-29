@@ -115,12 +115,6 @@ function endRound() {
     );
   } else if (currentPlayerHealth <= 0 && currentMonsterHealth <= 0) {
     alert('Draw');
-    writeToLog(
-      LOG_EVENT_GAME_OVER,
-      'DRAW',
-      currentMonsterHealth,
-      currentPlayerHealth
-    );
   }
 
   if (currentMonsterHealth <= 0 || currentPlayerHealth <= 0) {
