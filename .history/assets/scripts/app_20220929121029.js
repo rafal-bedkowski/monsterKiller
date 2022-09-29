@@ -3,17 +3,7 @@ const STRONG_ATTACK_VALUE = 17;
 const MONSTER_ATTACKA_VALUE = 14;
 const HEAL_VALUE = 20;
 
-const enteredNumber = prompt(
-  'Max health lvl for you and the opponent: ',
-  '100'
-);
-
-let chosenMaxLife = parseInt(enteredNumber);
-
-if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
-  chosenMaxLife = 100;
-}
-
+let chosenMaxLife = 100;
 let currentPlayerHealth = chosenMaxLife;
 let currentMonsterHealth = chosenMaxLife;
 let hasBonusLife = true;
@@ -23,7 +13,7 @@ adjustHealthBars(chosenMaxLife);
 function reset() {
   currentPlayerHealth = chosenMaxLife;
   currentMonsterHealth = chosenMaxLife;
-  resetGame(chosenMaxLife);
+  resetGame();
 }
 
 function endRound() {

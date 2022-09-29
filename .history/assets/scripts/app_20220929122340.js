@@ -9,11 +9,6 @@ const enteredNumber = prompt(
 );
 
 let chosenMaxLife = parseInt(enteredNumber);
-
-if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
-  chosenMaxLife = 100;
-}
-
 let currentPlayerHealth = chosenMaxLife;
 let currentMonsterHealth = chosenMaxLife;
 let hasBonusLife = true;
