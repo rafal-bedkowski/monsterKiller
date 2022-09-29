@@ -82,12 +82,6 @@ function endRound() {
   const initialPlayerHealth = currentPlayerHealth;
   const playerDamage = dealPlayerDamage(MONSTER_ATTACKA_VALUE);
   currentPlayerHealth -= playerDamage;
-  writeToLog(
-    LOG_EVENT_MONSTER_ATTACK,
-    playerDamage,
-    currentMonsterHealth,
-    currentPlayerHealth
-  );
 
   if (currentPlayerHealth <= 0 && hasBonusLife) {
     hasBonusLife = false;
@@ -141,10 +135,6 @@ function healPlayerHandler() {
   increasePlayerHealth(HEAL_VALUE);
   currentPlayerHealth += HEAL_VALUE;
   endRound();
-}
-
-function printLogHandler() {
-  console.log(battleLog);
 }
 
 attackBtn.addEventListener('click', attackHandler);

@@ -8,8 +8,8 @@ const MODE_STRONG_ATTACK = 'STRONG_ATTACK';
 const LOG_EVENT_PLAYER_ATTACK = 'PLAYER_ATTACK';
 const LOG_EVENT_PLAYER_STRONG_ATTACK = 'PLAYER_STRONG_ATTACK';
 const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
-const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
-const LOG_EVENT_GAME_OVER = 'GAME_OVER';
+const LOG_EVENT_PLAYER_ATTACK = 'PLAYER_ATTACK';
+const LOG_EVENT_PLAYER_ATTACK = 'PLAYER_ATTACK';
 
 const enteredNumber = prompt(
   'Max health lvl for you and the opponent: ',
@@ -29,49 +29,8 @@ let hasBonusLife = true;
 
 adjustHealthBars(chosenMaxLife);
 
-function writeToLog(event, value, monsterHelath, playerHealth) {
-  let logEntry = {
-    event: event,
-    value: value,
-    finalMonsterHealth: monsterHelath,
-    finalPlayerHealth: playerHealth,
-  };
-  if (event === LOG_EVENT_PLAYER_ATTACK) {
-    logEntry.target = 'MONSTER'; //instead of writing the same object in all if else statement we declare it in variable and then add dynamically needed property to the object
-  } else if (event === LOG_EVENT_PLAYER_STRONG_ATTACK) {
-    logEntry = {
-      event: event,
-      value: value,
-      target: 'MONSTER',
-      finalMonsterHealth: monsterHelath,
-      finalPlayerHealth: playerHealth,
-    };
-  } else if (event === LOG_EVENT_MONSTER_ATTACK) {
-    logEntry = {
-      event: event,
-      value: value,
-      target: 'PLAYER',
-      finalMonsterHealth: monsterHelath,
-      finalPlayerHealth: playerHealth,
-    };
-  } else if (value === LOG_EVENT_PLAYER_HEAL) {
-    logEntry = {
-      event: event,
-      value: value,
-      target: 'PLAYER',
-      finalMonsterHealth: monsterHelath,
-      finalPlayerHealth: playerHealth,
-    };
-  } else if (event === LOG_EVENT_GAME_OVER) {
-    logEntry = {
-      event: event,
-      value: value,
-      finalMonsterHealth: monsterHelath,
-      finalPlayerHealth: playerHealth,
-    };
-  }
-  battleLog.push(logEntry);
-}
+function writeToLog(event, value) {}
+
 function reset() {
   currentPlayerHealth = chosenMaxLife;
   currentMonsterHealth = chosenMaxLife;
@@ -82,12 +41,6 @@ function endRound() {
   const initialPlayerHealth = currentPlayerHealth;
   const playerDamage = dealPlayerDamage(MONSTER_ATTACKA_VALUE);
   currentPlayerHealth -= playerDamage;
-  writeToLog(
-    LOG_EVENT_MONSTER_ATTACK,
-    playerDamage,
-    currentMonsterHealth,
-    currentPlayerHealth
-  );
 
   if (currentPlayerHealth <= 0 && hasBonusLife) {
     hasBonusLife = false;
@@ -143,11 +96,6 @@ function healPlayerHandler() {
   endRound();
 }
 
-function printLogHandler() {
-  console.log(battleLog);
-}
-
 attackBtn.addEventListener('click', attackHandler);
 strongAttackBtn.addEventListener('click', strongAttackHandler);
 healBtn.addEventListener('click', healPlayerHandler);
-logBtn.addEventListener('click', printLogHandler);
