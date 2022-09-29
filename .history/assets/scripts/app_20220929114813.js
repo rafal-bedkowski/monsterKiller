@@ -19,8 +19,6 @@ function endRound() {
     hasBonusLife = false;
     removeBonusLife;
     currentPlayerHealth = initialPlayerHealth;
-    alert('You will be dead! Say thanks to the bonus life');
-    setPlayerHealth(initialPlayerHealth);
   }
 
   if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
