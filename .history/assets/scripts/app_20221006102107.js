@@ -133,7 +133,7 @@ function attackMonster(mode) {
   const logEvent =
     mode === MODE_ATTACK
       ? LOG_EVENT_PLAYER_ATTACK
-      : LOG_EVENT_PLAYER_STRONG_ATTACK; //using ternary operator instead of if/else statement
+      : LOG_EVENT_PLAYER_STRONG_ATTACK;
   // if (mode === MODE_ATTACK) {
   //   maxDamage = ATTACK_VALUE;
   //   LOG_EVENT_PLAYER_ATTACK;

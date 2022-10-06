@@ -129,11 +129,8 @@ function endRound() {
 }
 
 function attackMonster(mode) {
-  const maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE; //if mode is === to MODE_ATTACK assign value ATTACK_VALUE, if not assign the STRONG_ATTACK_VALUE
-  const logEvent =
-    mode === MODE_ATTACK
-      ? LOG_EVENT_PLAYER_ATTACK
-      : LOG_EVENT_PLAYER_STRONG_ATTACK; //using ternary operator instead of if/else statement
+  let maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE;
+  let logEvent;
   // if (mode === MODE_ATTACK) {
   //   maxDamage = ATTACK_VALUE;
   //   LOG_EVENT_PLAYER_ATTACK;
