@@ -41,7 +41,6 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
   ) {
     case LOG_EVENT_PLAYER_ATTACK:
       logEntry.target = 'MONSTER';
-      break;
     case LOG_EVENT_PLAYER_STRONG_ATTACK:
       logEntry = {
         event: event,
@@ -50,7 +49,6 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
         finalMonsterHealth: monsterHelath,
         finalPlayerHealth: playerHealth,
       };
-      break;
     case LOG_EVENT_MONSTER_ATTACK:
       logEntry = {
         event: event,
@@ -59,7 +57,6 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
         finalMonsterHealth: monsterHelath,
         finalPlayerHealth: playerHealth,
       };
-      break;
     case LOG_EVENT_PLAYER_HEAL:
       logEntry = {
         event: event,
@@ -68,7 +65,6 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
         finalMonsterHealth: monsterHelath,
         finalPlayerHealth: playerHealth,
       };
-      break;
     case LOG_EVENT_GAME_OVER:
       logEntry = {
         event: event,
@@ -76,7 +72,6 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
         finalMonsterHealth: monsterHelath,
         finalPlayerHealth: playerHealth,
       };
-      break;
   }
 
   // if (event === LOG_EVENT_PLAYER_ATTACK) {

@@ -41,7 +41,6 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
   ) {
     case LOG_EVENT_PLAYER_ATTACK:
       logEntry.target = 'MONSTER';
-      break;
     case LOG_EVENT_PLAYER_STRONG_ATTACK:
       logEntry = {
         event: event,
@@ -50,7 +49,6 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
         finalMonsterHealth: monsterHelath,
         finalPlayerHealth: playerHealth,
       };
-      break;
     case LOG_EVENT_MONSTER_ATTACK:
       logEntry = {
         event: event,
@@ -59,7 +57,6 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
         finalMonsterHealth: monsterHelath,
         finalPlayerHealth: playerHealth,
       };
-      break;
     case LOG_EVENT_PLAYER_HEAL:
       logEntry = {
         event: event,
@@ -68,7 +65,6 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
         finalMonsterHealth: monsterHelath,
         finalPlayerHealth: playerHealth,
       };
-      break;
     case LOG_EVENT_GAME_OVER:
       logEntry = {
         event: event,
@@ -76,43 +72,42 @@ function writeToLog(event, value, monsterHelath, playerHealth) {
         finalMonsterHealth: monsterHelath,
         finalPlayerHealth: playerHealth,
       };
-      break;
   }
 
-  // if (event === LOG_EVENT_PLAYER_ATTACK) {
-  //   logEntry.target = 'MONSTER'; //instead of writing the same object in all if else statement we declare it in variable and then add dynamically needed property to the object
-  // } else if (event === LOG_EVENT_PLAYER_STRONG_ATTACK) {
-  //   logEntry = {
-  //     event: event,
-  //     value: value,
-  //     target: 'MONSTER',
-  //     finalMonsterHealth: monsterHelath,
-  //     finalPlayerHealth: playerHealth,
-  //   };
-  // } else if (event === LOG_EVENT_MONSTER_ATTACK) {
-  //   logEntry = {
-  //     event: event,
-  //     value: value,
-  //     target: 'PLAYER',
-  //     finalMonsterHealth: monsterHelath,
-  //     finalPlayerHealth: playerHealth,
-  //   };
-  // } else if (value === LOG_EVENT_PLAYER_HEAL) {
-  //   logEntry = {
-  //     event: event,
-  //     value: value,
-  //     target: 'PLAYER',
-  //     finalMonsterHealth: monsterHelath,
-  //     finalPlayerHealth: playerHealth,
-  //   };
-  // } else if (event === LOG_EVENT_GAME_OVER) {
-  //   logEntry = {
-  //     event: event,
-  //     value: value,
-  //     finalMonsterHealth: monsterHelath,
-  //     finalPlayerHealth: playerHealth,
-  //   };
-  // }
+  if (event === LOG_EVENT_PLAYER_ATTACK) {
+    logEntry.target = 'MONSTER'; //instead of writing the same object in all if else statement we declare it in variable and then add dynamically needed property to the object
+  } else if (event === LOG_EVENT_PLAYER_STRONG_ATTACK) {
+    logEntry = {
+      event: event,
+      value: value,
+      target: 'MONSTER',
+      finalMonsterHealth: monsterHelath,
+      finalPlayerHealth: playerHealth,
+    };
+  } else if (event === LOG_EVENT_MONSTER_ATTACK) {
+    logEntry = {
+      event: event,
+      value: value,
+      target: 'PLAYER',
+      finalMonsterHealth: monsterHelath,
+      finalPlayerHealth: playerHealth,
+    };
+  } else if (value === LOG_EVENT_PLAYER_HEAL) {
+    logEntry = {
+      event: event,
+      value: value,
+      target: 'PLAYER',
+      finalMonsterHealth: monsterHelath,
+      finalPlayerHealth: playerHealth,
+    };
+  } else if (event === LOG_EVENT_GAME_OVER) {
+    logEntry = {
+      event: event,
+      value: value,
+      finalMonsterHealth: monsterHelath,
+      finalPlayerHealth: playerHealth,
+    };
+  }
   battleLog.push(logEntry);
 }
 function reset() {
