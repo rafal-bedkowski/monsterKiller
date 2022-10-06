@@ -140,7 +140,7 @@ function attackMonster(mode) {
   }
   const damage = dealMonsterDamage(maxDamage);
   currentMonsterHealth -= damage;
-  writeToLog(logEvent, damage, currentMonsterHealth, currentPlayerHealth);
+  writeToLog(logEvent, 'YOU LOST', currentMonsterHealth, currentPlayerHealth);
   endRound();
 }
 
@@ -162,12 +162,6 @@ function healPlayerHandler() {
   }
   increasePlayerHealth(HEAL_VALUE);
   currentPlayerHealth += HEAL_VALUE;
-  writeToLog(
-    LOG_EVENT_PLAYER_HEAL,
-    healValue,
-    currentMonsterHealth,
-    currentPlayerHealth
-  );
   endRound();
 }
 

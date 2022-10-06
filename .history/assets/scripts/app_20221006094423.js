@@ -162,12 +162,7 @@ function healPlayerHandler() {
   }
   increasePlayerHealth(HEAL_VALUE);
   currentPlayerHealth += HEAL_VALUE;
-  writeToLog(
-    LOG_EVENT_PLAYER_HEAL,
-    healValue,
-    currentMonsterHealth,
-    currentPlayerHealth
-  );
+  writeToLog(logEvent, damage, currentMonsterHealth, currentPlayerHealth);
   endRound();
 }
 
